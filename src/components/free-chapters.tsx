@@ -1,7 +1,30 @@
+"use client";
 import { Container } from "@/components/container";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "./ui/button";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
+import { Input } from "./ui/input";
+
+const formSchema = z.object({
+  name: z.string({ required_error: "Name is required" }).min(2).max(50),
+  email: z
+    .string({ required_error: "Email is required" })
+    .trim()
+    .email("Invalid email address"),
+});
 
 export function FreeChapters() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
   return (
     <section
       id="free-chapters"
@@ -15,30 +38,56 @@ export function FreeChapters() {
         >
           <div>
             <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight text-white sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
-              Get the free sample chapters
+              Grab Your Free Preview Now
             </h2>
-            <p className="mt-4 text-lg tracking-tight text-blue-200">
-              Enter your email address and I’ll send you a sample from the book
-              containing two of my favorite chapters.
+            <p className="mt-4 text-lg tracking-tight text-blue-50">
+              Experience the Book Before You Buy. Enter Your Email and Receive
+              Two Chapters as a Preview.
             </p>
           </div>
-          <form className="lg:pl-16">
-            <h3 className="text-base font-medium tracking-tight text-white">
-              Get two free chapters straight to your inbox{" "}
-              <span aria-hidden="true">&rarr;</span>
-            </h3>
-            <div className="mt-4 sm:relative sm:flex sm:items-center sm:py-0.5 sm:pr-2.5">
-              <div className="relative sm:static sm:flex-auto">
-                <input
-                  type="email"
-                  id="email-address"
-                  required
-                  aria-label="Email address"
-                  placeholder="Email address"
-                  className="peer relative z-10 w-full appearance-none bg-transparent px-4 py-2 text-base text-white placeholder:text-white/70 focus:outline-none sm:py-3"
-                />
-                <div className="absolute inset-0 rounded-md border border-white/20 peer-focus:border-blue-300 peer-focus:bg-blue-500 peer-focus:ring-1 peer-focus:ring-blue-300 sm:rounded-xl" />
-              </div>
+          <Form {...form}>
+            <form
+              className="lg:pl-16 space-y-4"
+              onSubmit={form.handleSubmit(onSubmit)}
+            >
+              <h3 className="text-base font-medium tracking-tight text-white">
+                Get Your Hands on Two Free Chapters{" "}
+                <span aria-hidden="true">&rarr;</span>
+              </h3>
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        placeholder="Enter name"
+                        className="peer relative z-10 w-full appearance-none bg-transparent px-4 py-2 text-base text-white placeholder:text-white/70 focus:outline-none sm:py-3 border border-white/20"
+                      />
+                    </FormControl>
+                    <FormMessage className="text-blue-200" />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        placeholder="Enter email"
+                        className="peer relative z-10 w-full appearance-none bg-transparent px-4 py-2 text-base text-white placeholder:text-white/70 focus:outline-none sm:py-3 border border-white/20"
+                      />
+                    </FormControl>
+                    <FormMessage className="text-blue-200" />
+                  </FormItem>
+                )}
+              />
+
               <Button
                 type="submit"
                 variant="secondary"
@@ -46,8 +95,8 @@ export function FreeChapters() {
               >
                 Get free chapters
               </Button>
-            </div>
-          </form>
+            </form>
+          </Form>
         </Container>
       </div>
     </section>

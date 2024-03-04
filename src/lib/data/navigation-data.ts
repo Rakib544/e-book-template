@@ -19,4 +19,9 @@ export const navLinks = [
     label: "Author",
     href: "#author",
   },
+  {
+    id: 5,
+    label: "Contact",
+    href: "#contact",
+  },
 ];

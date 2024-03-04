@@ -121,6 +121,7 @@ function SocialLink({
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
+            aria-label={`Visit ${title}`}
             href={href}
             className={buttonVariants({
               variant: "outline",

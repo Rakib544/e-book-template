@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import coverImage from "../images/cover.png";
+import coverBackImage from "../images/cover-back.webp";
+import coverImage from "../images/cover-front.webp";
 import { Container } from "./container";
 import Navbar from "./navbar";
 import { buttonVariants } from "./ui/button";
@@ -67,7 +68,7 @@ export default function Hero() {
                 <div className="overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5">
                   <Image
                     className="h-[404px] w-[336px]"
-                    src={coverImage}
+                    src={coverBackImage}
                     alt=""
                     priority
                   />
