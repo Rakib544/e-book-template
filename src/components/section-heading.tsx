@@ -1,17 +1,11 @@
 import clsx from "clsx";
-import { ReactNode } from "react";
 
-export function SectionHeading({
-  number,
-  children,
-  className,
-  ...props
-}: {
+export interface HeadingProps extends React.HTMLAttributes<HTMLHeadElement> {
   number: string;
-  children?: ReactNode | ReactNode[];
-  className?: string;
-  props?: any;
-}) {
+}
+
+export function SectionHeading(props: HeadingProps) {
+  const { className, children } = props;
   return (
     <h2
       className={clsx(

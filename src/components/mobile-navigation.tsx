@@ -2,6 +2,7 @@
 import { navLinks } from "@/lib/data/navigation-data";
 import Link from "next/link";
 import { useState } from "react";
+import { MobileNavIcon } from "./icons";
 import { Button, buttonVariants } from "./ui/button";
 import {
   NavigationMenu,
@@ -12,24 +13,10 @@ import {
 } from "./ui/navigation-menu";
 import { Sheet, SheetContent } from "./ui/sheet";
 
-function MobileNavIcon(props: any) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className="h-6 w-6 fill-neutral-950 group-hover:fill-neutral-700"
-      {...props}
-    >
-      <path d="M2 6h20v2H2zM2 16h20v2H2z"></path>
-    </svg>
-  );
-}
-
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      {/* <SheetTrigger asChild> */}
       <Button
         aria-label="Open Navigation"
         variant="ghost"
@@ -37,7 +24,7 @@ export default function MobileNavigation() {
       >
         <MobileNavIcon />
       </Button>
-      {/* </SheetTrigger> */}
+
       <SheetContent>
         <NavigationMenu>
           <NavigationMenuList className="flex-col items-start mt-8 w-full">

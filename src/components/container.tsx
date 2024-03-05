@@ -1,24 +1,34 @@
-import clsx from "clsx";
-import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import { VariantProps, cva } from "class-variance-authority";
+import React from "react";
 
-const styles = {
-  xs: "mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-2",
-  sm: "mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12",
-  md: "mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-5xl lg:px-8",
-  lg: "mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-7xl lg:px-8",
-};
+const buttonVariants = cva("mx-auto px-4 sm:px-6 md:px-4 md:max-w-2xl ", {
+  variants: {
+    size: {
+      default: "lg:max-w-4xl lg:px-12",
+      xs: "lg:px-2",
+      sm: "lg:max-w-4xl lg:px-12",
+      md: "lg:max-w-5xl lg:px-8",
+      lg: "lg:max-w-7xl lg:px-8",
+    },
+  },
+});
 
-type Size = "sm" | "xs" | "md" | "lg";
-
-export function Container({
-  size = "sm",
-  className,
-  ...props
-}: {
-  size?: Size;
-  className?: string;
-  children?: ReactNode | ReactNode[];
-  props?: any;
-}) {
-  return <div className={clsx(styles[size], className)} {...props} />;
+export interface ContainerProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
 }
+
+export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
+  ({ className, size = "sm", ...props }, ref) => {
+    return (
+      <div
+        className={cn(buttonVariants({ size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+Container.displayName = "Container";
