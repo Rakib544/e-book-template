@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import coverBackImage from "../images/cover-back.webp";
-import coverImage from "../images/cover-front.webp";
+import coverBackImage from "../images/cover-back.svg";
+import coverImage from "../images/cover-front.svg";
 import { Container } from "./container";
 import Navbar from "./navbar";
 import { buttonVariants } from "./ui/button";
