@@ -1,5 +1,6 @@
 "use client";
 import { navLinks } from "@/lib/data/navigation-data";
+import Image from "next/image";
 import Link from "next/link";
 import MobileNavigation from "./mobile-navigation";
 import { buttonVariants } from "./ui/button";
@@ -13,9 +14,9 @@ import {
 
 export default function Navbar() {
   return (
-    <NavigationMenu className="max-w-6xl mx-auto flex justify-between items-center py-6 lg:px-7">
+    <NavigationMenu className="max-w-6xl mx-auto flex justify-between items-center py-4 lg:px-7">
       <Link aria-label="Home" href="" className="text-2xl font-extrabold ">
-        eBooks
+        <Image src="/logo.svg" alt="logo" width={200} height={100} priority />
       </Link>
       <NavigationMenuList className="hidden lg:flex">
         {navLinks.map((link) => (

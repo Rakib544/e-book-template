@@ -8,7 +8,7 @@ import { buttonVariants } from "./ui/button";
 
 export default function Hero() {
   return (
-    <header className="overflow-hidden">
+    <header className="overflow-hidden bg-[url('/header.png')] bg-[length:2000px_100%] bg-[position:calc(50%_+_220px)_-50px] bg-no-repeat">
       <Container size="lg">
         <Navbar />
         <div className="max-w-6xl mx-auto grid grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-12 md:pt-12 lg:grid-cols-12 lg:gap-y-20 lg:pb-36 lg:pt-12 xl:py-20 items-center">

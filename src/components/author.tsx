@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import authorImage from "@/images/author.jpg";
+import { authorData } from "@/lib/data/author-data";
 import { ReactNode } from "react";
 import { Container } from "./container";
 import { FacebookIcon, LinkedInIcon, TwitterIcon } from "./icons";
@@ -40,28 +41,21 @@ export function Author() {
           <div className="col-span-12 lg:col-span-7 mt-6">
             <SectionHeading number="5">Author</SectionHeading>
             <p className="mt-6 text-2xl lg:text-4xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              <span className="block text-primary">Emma Smith –</span> Hey
-              there, I’m the author behind &quot;Unlock Your Potential.&quot;.
+              <span className="block text-primary">{authorData.name} –</span>{" "}
+              Hey there, I’m the author behind &quot;{authorData.bookName}
+              &quot;.
             </p>
             <p className="mt-4 leading-8 text-base text-slate-700">
-              Emma Smith is a seasoned life coach and motivational speaker
-              dedicated to helping individuals unlock their full potential and
-              achieve personal growth. With a background in psychology and years
-              of experience working with clients from all walks of life, Emma
-              offers practical strategies, actionable advice, and inspiring
-              insights to empower readers on their journey of self-discovery.
-              Her passion for personal growth and commitment to helping others
-              live fulfilling lives shine through in every page of &quot;Unlock
-              Your Potential.&quot;
+              {authorData.bio}
             </p>
             <div className="flex gap-x-2 mt-4">
-              <SocialLink href="#" title="Facebook">
+              <SocialLink href={authorData.twitterUrl} title="Twitter">
                 <TwitterIcon className="h-5 w-5 fill-current" />
               </SocialLink>
-              <SocialLink href="#" title="Facebook">
+              <SocialLink href={authorData.facebookUrl} title="Facebook">
                 <FacebookIcon className="h-5 w-5 fill-current" />
               </SocialLink>
-              <SocialLink href="#" title="Facebook">
+              <SocialLink href={authorData.linkedinUrl} title="Linkedin">
                 <LinkedInIcon className="h-5 w-5 fill-current" />
               </SocialLink>
             </div>
@@ -88,6 +82,7 @@ function SocialLink({
           <Link
             aria-label={`Visit ${title}`}
             href={href}
+            target="_blank"
             className={buttonVariants({
               variant: "outline",
               className:
