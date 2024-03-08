@@ -82,7 +82,7 @@ function Plan({
         </ul>
         <Link
           href={href}
-          color={featured ? "white" : "slate"}
+          // color={featured ? "white" : "slate"}
           className={buttonVariants({
             variant: featured ? "outline" : "default",
             className: "mt-8",
@@ -100,11 +100,11 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      aria-labelledby="pricing-title"
+      aria-labelledby="pricing"
       className="scroll-mt-14 pb-8 pt-16 sm:-scroll-mt-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
     >
       <Container>
-        <SectionHeading number="4">Pricing</SectionHeading>
+        <SectionHeading>Pricing</SectionHeading>
         <p className="mt-8 text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
           Pick your package
         </p>

@@ -19,7 +19,7 @@ export function Author() {
   return (
     <section
       id="author"
-      aria-labelledby="author-title"
+      aria-labelledby="author"
       className="relative scroll-mt-14 pb-3 pt-8 sm:-scroll-mt-4 sm:pb-16 sm:pt-10 lg:pt-16"
     >
       <div className="relative mx-auto max-w-5xl pt-16"></div>
@@ -39,7 +39,7 @@ export function Author() {
             </div>
           </div>
           <div className="col-span-12 lg:col-span-7 mt-6">
-            <SectionHeading number="5">Author</SectionHeading>
+            <SectionHeading>Author</SectionHeading>
             <p className="mt-6 text-2xl lg:text-4xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               <span className="block text-primary">{authorData.name} –</span>{" "}
               Hey there, I’m the author behind &quot;{authorData.bookName}

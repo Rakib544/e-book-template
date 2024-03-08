@@ -10,11 +10,11 @@ export default function Chapters() {
   return (
     <section
       id="chapters"
-      aria-labelledby="table-of-contents-title"
+      aria-labelledby="chapters"
       className="scroll-mt-14 py-16 sm:scroll-mt-4 sm:py-20"
     >
       <Container>
-        <SectionHeading number="1">Chapters</SectionHeading>
+        <SectionHeading>Chapters</SectionHeading>
         <p className="mt-8 text-2xl lg:text-3xl font-bold tracking-tight text-slate-900">
           Explore the Depths: Dive into the Comprehensive Content of the Book.
           Everything You Need to Know Awaits!

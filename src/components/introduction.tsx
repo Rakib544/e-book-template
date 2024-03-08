@@ -36,7 +36,7 @@ export function Introduction() {
           authenticity—this book covers it all.
         </p>
         <p className="mt-4 leading-8 text-[17px]">Discover how to:</p>
-        <ul role="list" className="mt-8 space-y-3">
+        <ul className="mt-8 space-y-3">
           {[
             "Develop unwavering self-confidence and self-belief",
             "Set clear, achievable goals and create a roadmap for success",

@@ -1,8 +1,6 @@
 import clsx from "clsx";
 
-export interface HeadingProps extends React.HTMLAttributes<HTMLHeadElement> {
-  number: string;
-}
+export interface HeadingProps extends React.HTMLAttributes<HTMLHeadElement> {}
 
 export function SectionHeading(props: HeadingProps) {
   const { className, children } = props;

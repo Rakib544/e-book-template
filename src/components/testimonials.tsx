@@ -19,7 +19,7 @@ export function Testimonials() {
       className="py-8 sm:py-10 lg:py-16"
     >
       <Container>
-        <SectionHeading number="4">Reviews</SectionHeading>
+        <SectionHeading>Reviews</SectionHeading>
         <p className="mt-8 text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
           Happy Customer Reviews
         </p>

@@ -46,11 +46,11 @@ export function ContactForm() {
   return (
     <section
       id="contact"
-      aria-labelledby="contact-title"
+      aria-labelledby="contact"
       className="scroll-mt-14 pb-8 pt-16 mt-20 lg:mt-0 sm:-scroll-mt-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
     >
       <Container>
-        <SectionHeading number="4">Contact</SectionHeading>
+        <SectionHeading>Contact</SectionHeading>
         <p className="mt-8 text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
           Get in touch
         </p>
