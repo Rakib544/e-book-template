@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import image from "@/images/author.jpg";
 import { testimonials } from "@/lib/data/testimonials-data";
 import { Container } from "./container";
 import { SectionHeading } from "./section-heading";
@@ -44,7 +43,7 @@ export function Testimonials() {
                   author={{
                     name: testimonial.name,
                     role: testimonial.role,
-                    image: image,
+                    image: testimonial.image,
                   }}
                 >
                   {testimonial.content}

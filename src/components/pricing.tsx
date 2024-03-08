@@ -65,7 +65,6 @@ function Plan({
           </span>
         </p>
         <ul
-          role="list"
           className={clsx(
             "order-last mt-10 flex flex-col gap-y-3 text-sm",
             featured ? "text-white" : "text-slate-900"

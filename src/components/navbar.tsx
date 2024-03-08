@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <NavigationMenu className="max-w-6xl mx-auto flex justify-between items-center py-4 lg:px-7">
       <Link aria-label="Home" href="" className="text-2xl font-extrabold ">
-        <Image src="/logo.svg" alt="logo" width={200} height={100} priority />
+        <Image src="/logo.svg" alt="logo" width={213} height={57} priority />
       </Link>
       <NavigationMenuList className="hidden lg:flex">
         {navLinks.map((link) => (
