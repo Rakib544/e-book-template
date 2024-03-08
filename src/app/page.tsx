@@ -7,7 +7,6 @@ import { FreeChapters } from "@/components/free-chapters";
 import { Introduction } from "@/components/introduction";
 import { Pricing } from "@/components/pricing";
 import { Testimonials } from "@/components/testimonials";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -15,17 +14,17 @@ export default function Home() {
       <Hero />
       <Introduction />
       <Chapters />
-      <Suspense fallback={<p>Free Chapters are loading</p>}>
-        <FreeChapters />
-      </Suspense>
-      <Suspense fallback={<p>Testimonials are loading</p>}>
-        <Testimonials />
-      </Suspense>
+      {/* <Suspense fallback={<p>Free Chapters are loading</p>}> */}
+      <FreeChapters />
+      {/* </Suspense> */}
+      {/* <Suspense fallback={<p>Testimonials are loading</p>}> */}
+      <Testimonials />
+      {/* </Suspense> */}
       <Pricing />
       <Author />
-      <Suspense fallback={<p>Contact Form are loading</p>}>
-        <ContactForm />
-      </Suspense>
+      {/* <Suspense fallback={<p>Contact Form are loading</p>}> */}
+      <ContactForm />
+      {/* </Suspense> */}
       <Footer />
     </main>
   );

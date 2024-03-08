@@ -10,7 +10,7 @@ export function Introduction() {
       className="pb-16 pt-20 sm:pb-20 md:pt-36 lg:pb-32 lg:pt-12"
     >
       <Container className="text-lg tracking-tight text-slate-700">
-        <p className="font-display text-2xl lg:text-4xl font-bold tracking-tight text-slate-900">
+        <p className="text-2xl lg:text-4xl font-bold tracking-tight text-slate-900">
           &quot;Unlock Your Potential&quot; is more than just a book—it&lsquo;s
           your roadmap to unleashing the incredible power within you.
         </p>
