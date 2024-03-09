@@ -46,7 +46,6 @@ export function ContactForm() {
   return (
     <section
       id="contact"
-      aria-labelledby="contact"
       className="scroll-mt-14 pb-8 pt-16 mt-20 lg:mt-0 sm:-scroll-mt-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
     >
       <Container>

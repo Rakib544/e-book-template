@@ -10,7 +10,6 @@ export default function Chapters() {
   return (
     <section
       id="chapters"
-      aria-labelledby="chapters"
       className="scroll-mt-14 py-16 sm:scroll-mt-4 sm:py-20"
     >
       <Container>

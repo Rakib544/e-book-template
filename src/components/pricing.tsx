@@ -99,7 +99,6 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      aria-labelledby="pricing"
       className="scroll-mt-14 pb-8 pt-16 sm:-scroll-mt-8 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
     >
       <Container>

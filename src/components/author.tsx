@@ -19,7 +19,6 @@ export function Author() {
   return (
     <section
       id="author"
-      aria-labelledby="author"
       className="relative scroll-mt-14 pb-3 pt-8 sm:-scroll-mt-4 sm:pb-16 sm:pt-10 lg:pt-16"
     >
       <div className="relative mx-auto max-w-5xl pt-16"></div>
